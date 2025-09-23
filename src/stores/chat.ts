@@ -21,9 +21,11 @@ type ChatLog = {
 
 export const useChatStore = defineStore('chat', () => {
   const data = ref<ChatLog>({
-    1754922091285: { type: 'chat', name: 'Server', message: 'F11 以全屏游玩' },
-    1754922092123: { type: 'chat', name: 'Server', message: '点击 Server 以隐藏该消息。' },
-    1754922093286: { type: 'log', level: 'info', message: '房间已创建' },
+    0: { type: 'chat', name: 'Server', message: 'F11 以全屏游玩' },
+    1: { type: 'chat', name: 'Server', message: '点击 Server 以隐藏该消息。' },
+    2: { type: 'chat', name: 'Server', message: 'Q/E 选择牌，空格键 出牌' },
+    3: { type: 'log', level: 'info', message: '房间已创建' },
+
   })
   function addMessage(message: MessageEntry) {
     const timestamp = Date.now().toString()
