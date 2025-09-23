@@ -1,0 +1,63 @@
+[
+  {
+    "folder": "AveMujica",
+    "images": []
+  },
+  {
+    "folder": "ChineseCelebrities",
+    "images": [
+      "/characters/head/ChineseCelebrities/Lord%20of%20Hibiscus.webp",
+      "/characters/head/ChineseCelebrities/Lord%20of%20LiTang.webp",
+      "/characters/head/ChineseCelebrities/MaoDie.webp",
+      "/characters/head/ChineseCelebrities/Otto.webp"
+    ]
+  },
+  {
+    "folder": "Drakengard",
+    "images": [
+      "/characters/head/Drakengard/Zero.webp"
+    ]
+  },
+  {
+    "folder": "NierAutomata",
+    "images": [
+      "/characters/head/NierAutomata/A2.webp"
+    ]
+  },
+  {
+    "folder": "Nikkle",
+    "images": [
+      "/characters/head/Nikkle/Doro.webp",
+      "/characters/head/Nikkle/Scarlet.webp"
+    ]
+  },
+  {
+    "folder": "Persona",
+    "images": [
+      "/characters/head/Persona/Death.webp",
+      "/characters/head/Persona/Joker.webp",
+      "/characters/head/Persona/Mask.webp",
+      "/characters/head/Persona/Queen.webp",
+      "/characters/head/Persona/TheJudgement.webp"
+    ]
+  },
+  {
+    "folder": "Suzumiya",
+    "images": [
+      "/characters/head/Suzumiya/Haruhi.webp"
+    ]
+  },
+  {
+    "folder": "VioletEvergarden",
+    "images": [
+      "/characters/head/VioletEvergarden/Violet.webp"
+    ]
+  },
+  {
+    "folder": "Yuzusoft",
+    "images": [
+      "/characters/head/Yuzusoft/Murasame.webp",
+      "/characters/head/Yuzusoft/Tomotake%20Yoshino.webp"
+    ]
+  }
+]
