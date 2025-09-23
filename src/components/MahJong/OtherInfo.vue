@@ -192,7 +192,7 @@ b:hover {
   color: green;
 }
 .discardedtile.new {
-  transform: scale(5);
+  transform: scale(10);
   transition: 0s;
 }
 </style>

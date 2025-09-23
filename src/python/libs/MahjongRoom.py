@@ -192,12 +192,12 @@ class MahjongRoom:
             # --- 新增分支：处理自摸胡 ---
             # 检查这是否是一个对摸牌的响应 (而不是对别人出牌的响应)
             is_self_draw_action = (self.game_instance.playerindex == player_id and not self.game_instance.pending_claims)
-
-            if action_type == 'hu' and is_self_draw_action:
+            if action_type == 'discard':
+                self._handle_discard(player_id, data)
+            elif action_type == 'hu' and is_self_draw_action:
+                logging.info('_handle_self_drawn_hu 处理自摸胡请求')
                 self._handle_self_drawn_hu(player_id)
             # --- 结束新增分支 ---
-            elif action_type == 'discard':
-                self._handle_discard(player_id, data)
             elif action_type in ['hu', 'pong', 'kong', 'chow']:
                 self._handle_claim(sid, player_id, data)
             else:
@@ -321,7 +321,11 @@ class MahjongRoom:
         # 检查自摸
         if next_player.can_hu(newly_drawn_tile, game.sort_rule, game.gamerule):
             game.pending_claims = {'hu': {next_player_id: 0}}
-            game.players[next_player_id].actions['hu'] = True
+            # 确保 actions 是一个字典，然后再赋值
+            if next_player.actions is None:
+                next_player.actions = {}
+            next_player.actions['hu'] = True
+            logging.info(f"玩家 {next_player.name} 可以自摸胡牌。")
             self.update_clients(f"轮到玩家 {next_player.name} 摸牌。")
             return
 
