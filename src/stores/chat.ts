@@ -24,7 +24,8 @@ export const useChatStore = defineStore('chat', () => {
     0: { type: 'chat', name: 'Server', message: 'F11 以全屏游玩' },
     1: { type: 'chat', name: 'Server', message: '点击 Server 以隐藏该消息。' },
     2: { type: 'chat', name: 'Server', message: 'Q/E 选择牌，空格键 出牌' },
-    3: { type: 'log', level: 'info', message: '房间已创建' },
+    3: { type: 'chat', name: 'Server', message: '1-6 选择操作，W 键 确认操作' },
+    4: { type: 'log', level: 'info', message: '房间已创建' },
 
   })
   function addMessage(message: MessageEntry) {

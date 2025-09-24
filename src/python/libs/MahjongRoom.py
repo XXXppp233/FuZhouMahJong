@@ -191,12 +191,16 @@ class MahjongRoom:
             
             # --- 新增分支：处理自摸胡 ---
             # 检查这是否是一个对摸牌的响应 (而不是对别人出牌的响应)
-            is_self_draw_action = (self.game_instance.playerindex == player_id and not self.game_instance.pending_claims)
+            is_self_draw_action = (self.game_instance.playerindex == player_id and self.game_instance.pending_claims.get('hu') is not None)
+            # is_self_dark_kong_action = (self.game_instance.playerindex == player_id and self.game_instance.pending_claims.get('kong') is not None)
             if action_type == 'discard':
                 self._handle_discard(player_id, data)
             elif action_type == 'hu' and is_self_draw_action:
                 logging.info('_handle_self_drawn_hu 处理自摸胡请求')
                 self._handle_self_drawn_hu(player_id)
+            # elif action_type == 'kong' and is_self_dark_kong_action:
+            #     logging.info('_handle_self_dark_kong 处理自摸暗杠请求')
+            #     self._handle_self_dark_kong(player_id)
             # --- 结束新增分支 ---
             elif action_type in ['hu', 'pong', 'kong', 'chow']:
                 self._handle_claim(sid, player_id, data)
@@ -211,6 +215,7 @@ class MahjongRoom:
     # --- 新增函数：处理自摸胡 ---
     def _handle_self_drawn_hu(self, player_id):
         """立即处理玩家的自摸胡动作。"""
+        logging.info('_handle_self_drawn_hu')
         player = self.game_instance.players[player_id]
         # 再次验证是否真的能胡
         if player.can_hu(player.new, self.game_instance.sort_rule, self.game_instance.gamerule):
@@ -222,6 +227,14 @@ class MahjongRoom:
             # 如果因为某些原因客户端发送了错误的请求，记录日志并忽略
             logging.warning(f"玩家 {player.name} 尝试自摸胡牌，但验证失败。")
             self.sio.emit('game_action_result', {'success': False, 'message': '无效的胡牌操作'}, room=self.player_id_to_sid.get(player_id))
+    def _handle_self_dark_kong(self, player_id):
+        logging.info('_handle_self_dark_kong')
+        player = self.game_instance.players[player_id]
+        self.game_instance.new_tile()
+        self.sio.emit('game_action_result', {'success': True, 'name': player.name, 'type': 'kong', 'message': f'玩家 {player.name} 完成了 暗杠'}, room=self.id)
+        self.update_clients(f"玩家 {player.name} 执行了 暗杠 操作。")
+        logging.info(f"玩家 {player.name} 确认暗杠。")
+
 
     def _handle_discard(self, player_id, data):
         """处理出牌动作，调用游戏引擎并处理结果。"""
@@ -328,6 +341,19 @@ class MahjongRoom:
             logging.info(f"玩家 {next_player.name} 可以自摸胡牌。")
             self.update_clients(f"轮到玩家 {next_player.name} 摸牌。")
             return
+        # if next_player.can_kong(newly_drawn_tile):
+        #     game.pending_claims = {'kong': {next_player_id: 5}}
+        #     if next_player.actions is None:
+        #         next_player.actions = {}
+        #     next_player.actions['kong'] = newly_drawn_tile
+        #     logging.info(f"玩家 {next_player.name} 可以杠牌。")
+
+        # elif next_player._can_kong():
+        #     game.pending_claims = {'kong': {next_player_id: 5}}
+        #     if next_player.actions is None:
+        #         next_player.actions = {}
+        #     next_player.actions['kong'] = True
+        #     logging.info(f"玩家 {next_player.name} 可以杠牌。")
 
         self.update_clients(f"轮到玩家 {next_player.name} 摸牌。")
 
@@ -353,7 +379,8 @@ class MahjongRoom:
         self.status = 'waiting'
         for p in self.members.values():
             p['ready'] = False
-        logging.info(f"取消玩家的准备状态, {self.members}")    
+        logging.info(f"取消玩家的准备状态, {self.members}")
+        self.sio.emit('chat_message', {'type': 'log', 'level': 'info', 'message': f'游戏结束！{reason}。胜利者: {winner_name}'}, room=self.id) 
         self.update_clients(f"游戏结束！{reason}。胜利者: {winner_name}")
 
     def _start_game_countdown(self):
@@ -399,7 +426,7 @@ class MahjongRoom:
 
         # 3. 为每个玩家单独发送初始化信息
         golden_tile = self.game_instance.golden_tile
-        self.sio.emit('chat_message', {'type': 'log', 'level': 'info', 'message': f'本局游戏金牌是 {golden_tile}'}, room=self.id)
+        self.sio.emit('chat_message', {'type': 'log', 'level': 'info', 'message': f'本局游戏金牌是 {_replacements.get(golden_tile, golden_tile)}'}, room=self.id)
         for p in self.game_instance.players:
             player_sid = self.player_id_to_sid.get(p.id)
             if player_sid:

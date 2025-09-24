@@ -2,7 +2,7 @@
   <span>
     <button
       v-if="props.label"
-      :class="{ pressed: ispressed, left: isleft, right: isright }"
+      :class="{ pressed: ispressed, left: isleft, right: isright, selected: props.selected }"
       @mousedown="ispressed = true"
       @mouseup="ispressed = false"
       @click="handleAction"
@@ -12,7 +12,7 @@
   </span>
 </template>
 <script setup>
-import { ref } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 import { socket } from '@/socket'
 
 const props = defineProps({
@@ -25,6 +25,11 @@ const props = defineProps({
     //操作 id 用于判断是否是第一个或最后一个
     type: Number,
     required: true,
+  },
+  selected: {
+    // 是否被选中
+    type: Boolean,
+    default: false,
   },
   length: {
     //总操作数 用于判断是否是第一个或最后一个
@@ -56,6 +61,37 @@ const handleAction = () => {
 const isleft = ref(props.actionid === 0)
 const isright = ref(props.actionid === props.length - 1)
 console.log(props.actionid, props.label)
+
+const handleKeyDown = (event) => {
+  if (props.selected){
+    if (event.keyCode === 87) { // W 键
+    ispressed.value = true
+  }
+  }
+  else return
+  
+}
+const handleKeyUp = (event) => {
+  if (props.selected){
+    if (event.keyCode === 87) { // W 键
+    ispressed.value = false
+    handleAction()
+  }
+  }
+  else return
+}
+
+
+onMounted(() => {
+  addEventListener('keydown', handleKeyDown)
+  addEventListener('keyup', handleKeyUp)
+})
+onUnmounted(() => {
+  removeEventListener('keydown', handleKeyDown)
+  removeEventListener('keyup', handleKeyUp)
+})
+
+
 </script>
 <style scoped>
 @media (prefers-color-scheme: dark) {
@@ -89,6 +125,10 @@ button:hover {
 }
 button.pressed {
   transform: scale(0.9);
+}
+button.selected {
+  background-color: green;
+  color: white;
 }
 button.left {
   border-top-left-radius: 2vw;

@@ -160,6 +160,13 @@ class MahjongPlayer:
         """检查玩家是否由三张相同牌"""
         if tile == 'joker': return False
         return self.hands.count(tile) == 3
+    def _can_kong(self):
+        """检查玩家是否有四张相同牌"""
+        counts = Counter(self.hands)
+        for tile, count in counts.items():
+            if tile != 'joker' and count == 4:
+                return tile
+        return None
     def can_pong(self, tile):
         """检查玩家是否有两张相同牌"""
         if tile == 'joker': return False
@@ -220,6 +227,18 @@ class MahjongPlayer:
         # 杠牌后需要补一张牌，这个逻辑由服务端处理
         for _ in range(3):
             self.hands.remove(tile)
+    def dark_kong(self, tile=None):
+        """暗杠不会记录到 locked 上"""
+        if self.new and self.hands.count(self.new) == 3: # 摸到的新牌能杠
+            for _ in range(3):
+                self.hands.remove(self.new)
+            self.new = ''
+        elif self.hands.count(tile) == 4: # 手上有四张能杠
+            for _ in range(4):
+                self.hands.remove(tile)
+
+
+
     def pong(self, tile):
         """碰牌, tile 是要碰的牌"""
         for _ in range(3):
@@ -351,6 +370,7 @@ class MahjongServer:
 
         indexmap = { 0: [1,2,3], 1: [2,3,0], 2: [3,0,1], 3: [0,1,2] }
         server_actions = { 'hu': {}, 'kong': {}, 'pong': {}, 'chow': {} }
+        checkpoint = False
 
         # 2. 遍历除了出牌玩家之外的所有玩家
         for player in self.players:
@@ -383,19 +403,23 @@ class MahjongServer:
                 priority = indexmap[self.playerindex].index(player.id)
                 if 'hu' in player.actions:
                     server_actions['hu'][player.id] = priority
+                    checkpoint = True
                 # 碰和杠的优先级固定，低于胡
                 if 'kong' in player.actions:
                     server_actions['kong'][player.id] = 5
+                    checkpoint = True
                 if 'pong' in player.actions:
                     server_actions['pong'][player.id] = 6
+                    checkpoint = True
                 # 吃的优先级最低
                 if 'chow' in player.actions:
                     server_actions['chow'][player.id] = 7
+                    checkpoint = True
 
         # 更新服务端的 pending_claims，只保留有玩家可以执行的动作类型
         self.pending_claims = {k: v for k, v in server_actions.items() if v}
 
-        if self.pending_claims:
+        if checkpoint:
             logging.info(f"Actions available for tile {tile}: {self.pending_claims}")
             # 额外打印出每个玩家的具体可行操作
             for p in self.players:

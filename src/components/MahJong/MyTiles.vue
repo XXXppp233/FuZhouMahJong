@@ -22,7 +22,6 @@ const loadKeySounds = async () => {
   }
 }
 
-
 //const actionNames = ref(['吃 🀙🀚', '吃 🀚🀜', '吃 🀜🀝', '碰 🀛', '杠 🀄', '胡'])
 const username = computed(() => status.username)
 const myid = computed(() => status.getMemberidBySid(mysid.value))
@@ -65,6 +64,7 @@ const select = (index) => {
   }
   console.log('selectedIndex', selectedIndex.value, hands.value[index])
 }
+const selectAction = ref(6) // 6 为无效选择，0~5 为吃碰杠胡等操作
 
 // 按键监听
 const handleKeyPress = (event) => {
@@ -88,6 +88,21 @@ const handleKeyPress = (event) => {
       selectedIndex.value += 1
     }
     keySounds.Play(event) // 播放 E 键音效
+  }
+  else if (event.keyCode >= 49 && event.keyCode <= 54) { // 49-54 是 '1'-'6' 的 keyCode
+    const actionIndex = event.keyCode - 49 // 转换为 0-5 的索引
+    if (actionsnumber.value === 0) return // 没有操作时不响应数字键
+    if (actionIndex < actionsnumber.value) {
+      if(selectAction.value === actionIndex){
+        console.log('取消选择')
+        selectAction.value = 6 // 再次按相同数字键取消选择
+      }else{
+        console.log('选择: ', actionIndex)
+        selectAction.value = actionIndex
+      } // 0-5 的选择
+      // 在这里添加对应操作的处理逻辑
+    }
+    keySounds.Play(event) // 播放数字键音效
   }
 }
 
@@ -129,7 +144,8 @@ const clicktestbutton = () => {
           <ActionButton
             v-for="(action, index) in actionsName"
             :label="action"
-            :actionid="index"
+            :actionid="index" 
+            :selected="selectAction === index"
             :length="actionsnumber"
             :data="actionsData[index]"
           />
@@ -203,6 +219,7 @@ span {
   width: 100%;
   padding: 0;
   border-radius: 10vh;
+  background-color: transparent;
 }
 
 .my-character {
