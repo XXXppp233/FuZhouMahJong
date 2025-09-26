@@ -48,17 +48,17 @@
 
 <script setup>
 import { socket } from '@/socket'
-import { ref, onMounted, computed } from 'vue'
+import { ref, onMounted, computed, watch } from 'vue'
 import { statusStore } from '@/stores/status'
 
 const status = statusStore()
 
 const myinfo = computed(() => status.getInfoBySid(status.mysid))
 const myname = computed(() => (myinfo.value ? myinfo.value.name : ''))
-const orgnaization = computed(() => (myinfo.value ? myinfo.value.decorator.org : ''))
-const charactername = computed(() => (myinfo.value ? myinfo.value.decorator.chara :''))
-const isReady = computed(() => myinfo.value? myinfo.value.ready : false)
-const headurl = computed(()=> 
+const orgnaization = computed(() => (myinfo.value.decorator ? myinfo.value.decorator.org : ''))
+const charactername = computed(() => (myinfo.value.decorator ? myinfo.value.decorator.chara : ''))
+const isReady = computed(() => (myinfo.value ? myinfo.value.ready : false))
+const headurl = computed(() =>
   isReady.value
     ? `characters/head/${orgnaization.value}/${charactername.value}.webp`
     : 'tilesvgs/Regular/Blank.svg',
@@ -70,6 +70,7 @@ const selectedFolder = ref('')
 const images = ref([])
 const selectedImage = ref('')
 const manifest = ref(null)
+const posterurl = computed(() => null) // 不必要的
 
 function nameFromUrl(u) {
   try {
@@ -136,9 +137,15 @@ function confirmSelection() {
         chara: nameFromUrl(selectedImage.value),
       },
     })
-    // isSelected.value = true
   }
 }
+
+// watch(isReady, (newval) => {
+//   if (newval) {
+
+//     })
+//   }
+// })
 
 onMounted(async () => {
   await fetchFolders()
@@ -168,7 +175,7 @@ onMounted(async () => {
 }
 .characters {
   z-index: 1;
-  border: 1vh solid black;
+  border: 0.5vw solid black;
   border-radius: 2vh;
   width: 50vw;
   height: 40vh;

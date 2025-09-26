@@ -175,10 +175,12 @@ const loadKeySounds = async () => {
 }
 const handleKeyUP = (event) => {
   if (event.key === 'Enter') {
+    isPressed.value = false
     login()
   }
 }
 const handleKeyDown = (event) => {
+  isPressed.value = true
   keySounds.Play(event) // 调用导入的Play函数
 }
 

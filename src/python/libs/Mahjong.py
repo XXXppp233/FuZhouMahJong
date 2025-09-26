@@ -170,7 +170,7 @@ class MahjongPlayer:
     def can_pong(self, tile):
         """检查玩家是否有两张相同牌"""
         if tile == 'joker': return False
-        return self.hands.count(tile) == 2
+        return self.hands.count(tile) >= 2
     def can_seven_pairs(self, counts, joker_count):
         """辅助函数，手牌数不为 13 时，服务端自动设定 allow seven pairs 为 False"""
         """检查金牌能否填补七对的空缺"""

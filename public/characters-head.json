@@ -1,7 +1,31 @@
 [
   {
     "folder": "AveMujica",
-    "images": []
+    "images": [
+      "/characters/head/AveMujica/Amoris.webp",
+      "/characters/head/AveMujica/Doloris.webp",
+      "/characters/head/AveMujica/Mortis.webp",
+      "/characters/head/AveMujica/Oblivionis.webp",
+      "/characters/head/AveMujica/Timoris.webp"
+    ]
+  },
+  {
+    "folder": "BangDream",
+    "images": [
+      "/characters/head/BangDream/Aya.webp",
+      "/characters/head/BangDream/Kasumi.webp",
+      "/characters/head/BangDream/Ran.webp",
+      "/characters/head/BangDream/Yukina.webp"
+    ]
+  },
+  {
+    "folder": "Bocchi the Rock",
+    "images": [
+      "/characters/head/Bocchi%20the%20Rock/Hitori%20Got%C5%8D.webp",
+      "/characters/head/Bocchi%20the%20Rock/Ikuyo%20Kita.webp",
+      "/characters/head/Bocchi%20the%20Rock/Nijika%20Ijichi.webp",
+      "/characters/head/Bocchi%20the%20Rock/Ryo%20Yamada.webp"
+    ]
   },
   {
     "folder": "ChineseCelebrities",
@@ -16,6 +40,29 @@
     "folder": "Drakengard",
     "images": [
       "/characters/head/Drakengard/Zero.webp"
+    ]
+  },
+  {
+    "folder": "Girl Band Cry",
+    "images": [
+      "/characters/head/Girl%20Band%20Cry/Momoka.webp",
+      "/characters/head/Girl%20Band%20Cry/Nina.webp",
+      "/characters/head/Girl%20Band%20Cry/Rupa.webp",
+      "/characters/head/Girl%20Band%20Cry/Subaru.webp",
+      "/characters/head/Girl%20Band%20Cry/Tomo.webp"
+    ]
+  },
+  {
+    "folder": "Honkai Impact",
+    "images": [
+      "/characters/head/Honkai%20Impact/Elysia.webp",
+      "/characters/head/Honkai%20Impact/Fuhua.webp",
+      "/characters/head/Honkai%20Impact/Herrscher%20of%20the%20Void.webp",
+      "/characters/head/Honkai%20Impact/Kallen.webp",
+      "/characters/head/Honkai%20Impact/Kiana.webp",
+      "/characters/head/Honkai%20Impact/Seele.webp",
+      "/characters/head/Honkai%20Impact/Teriri.webp",
+      "/characters/head/Honkai%20Impact/Yaezakura.webp"
     ]
   },
   {

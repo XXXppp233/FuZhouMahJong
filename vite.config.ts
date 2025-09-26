@@ -146,7 +146,7 @@ function charactersHeadPlugin(): Plugin {
 }
 
 export default defineConfig({
-  plugins: [vue(), vueJsx(), vueDevTools(), musicListPlugin(), charactersHeadPlugin()],
+  plugins: [vue(), vueJsx(), musicListPlugin(), charactersHeadPlugin()],
   server: {
     host: '0.0.0.0',
   },
