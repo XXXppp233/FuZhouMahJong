@@ -12,19 +12,7 @@
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { socket } from '@/socket'
 import { statusStore } from '@/stores/status'
-
-const keySoundType = ref('MikuTap') // default value
-const keyboardsoundsurl = computed(() => `../../keyboardsounds/${keySoundType.value}/main.js`)
-let keySounds = null
-const loadKeySounds = async () => {
-  try {
-    const soundsModule = await import(/* @vite-ignore */ keyboardsoundsurl.value)
-    keySounds = soundsModule.default
-  } catch (error) {
-    console.error('Error loading key sounds:', error)
-  }
-}
-
+import keySounds from '/src/assets/keyboardsounds/MikuTap/main.js'
 
 const props = defineProps({
   selectedIndex: {
@@ -71,7 +59,6 @@ const submitDiscard = () => {
 }
 
 onMounted(() => {
-  loadKeySounds()
   addEventListener('keydown', handleSpaceDown)
   addEventListener('keyup', handleSpaceUp)
 })

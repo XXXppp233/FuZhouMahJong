@@ -53,6 +53,7 @@
 <script setup>
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import { socket } from '@/socket'
+import keySounds from '/src/assets/keyboardsounds/MikuTap/main.js'
 
 const rankingData = [
   {
@@ -163,16 +164,8 @@ const unfocusNameInput = () => {
 }
 
 const keySoundType = ref('MikuTap') // 默认键盘音效类型
-const url = computed(() => `../../keyboardsounds/${keySoundType.value}/main.js`)
-let keySounds = null
-const loadKeySounds = async () => {
-  try {
-    const soundsModule = await import(/* @vite-ignore */ url.value)
-    keySounds = soundsModule.default
-  } catch (error) {
-    console.error('Error loading key sounds:', error)
-  }
-}
+const url = ref('/src/assets/keyboardsounds/MikuTap/main.js')
+
 const handleKeyUP = (event) => {
   if (event.key === 'Enter') {
     isPressed.value = false
@@ -214,7 +207,6 @@ const mouseWheel = (event) => {
 }
 
 onMounted(() => {
-  loadKeySounds()
 })
 onUnmounted(() => {})
 </script>

@@ -8,19 +8,16 @@
       @click="togglePlayback"
     ></canvas>
 
-    <!-- 控制面板 -->
     <div class="controls-wrapper">
-      <!-- 完整的控制面板 (v-show) -->
       <div v-show="controlsVisible" class="controls">
-        <!-- 新增：隐藏按钮 -->
 
-        <h3>修改主题色彩</h3>
+        <h3>Music Controls</h3>
         <div class="info">
-          <p>绿 紫 蓝 金</p>
+          <p></p>
         </div>
         <div class="picker">
           <select id="musicSelect" v-model="currentUrl" @change="changeTrack">
-            <option v-for="m in musicList" :key="m.url" :value="m.url">{{ m.name }}</option>
+            <option class="musicoption" v-for="(m, index) in musicList" :key="m.url" :value="m.url" :class="{ Odd: index%2 }">{{ m.name }}</option>
           </select>
         </div>
         <audio
@@ -266,7 +263,10 @@ function reloadList() {
 }
 
 const buttonurl = (url: string) => {
+  console.log(url)
   if (url.startsWith('/music/%F0%9F%90%B1')) {
+    return 'icons/maodie.webp'
+  }else if (url.startsWith('/music/%F0%9F%98%BA')) {
     return 'icons/maodie.webp'
   } else if (url.startsWith('/music/Miku')) {
     return 'icons/Miku.jpg'
@@ -307,7 +307,7 @@ canvas.gaming {
   transform: translateX(48vw);
 }
 canvas.playing:hover {
-  cursor: url('cursor/sym57.cur'), auto;
+  cursor: url('/src/assets/cursor/sym57.cur'), auto;
 }
 
 @keyframes viz-orbit {
@@ -343,10 +343,9 @@ canvas.playing:hover {
 }
 
 .controls {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: antiquewhite;
   padding: 1rem 1.5rem;
-  border-radius: 8px;
-  color: white;
+  border-radius: 1vh;
   font-family: sans-serif;
   text-align: left;
   position: relative; /* 用于定位隐藏按钮 */
@@ -362,38 +361,29 @@ audio {
 }
 select {
   flex: 1;
-  background: #222;
-  color: #fff;
   border: 1px solid #444;
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
 }
-button {
-  background: #444;
-  color: #fff;
-  border: 1px solid #555;
-  padding: 0.25rem 0.75rem;
-  border-radius: 4px;
-  cursor: pointer;
+.musicoption {
+  background-color: snow;
 }
-button:hover {
-  background: #555;
+.musicoption.Odd {
+  background-color: whitesmoke;
 }
 
-/* 新增：隐藏按钮样式 */
 .toggle-btn {
   position: absolute;
+  border-radius: 1vh;
   top: 10px;
   right: 10px;
   padding: 0.1rem 0.5rem;
-  background-color: #555;
   border: none;
 }
 .toggle-btn:hover {
-  background-color: #666;
+  cursor: pointer;
+  background-color: green;
 }
-
-/* 新增：显示控件按钮样式 */
 .show-btn {
   caret-color: transparent;
   width: 5vh;
@@ -401,7 +391,6 @@ button:hover {
   padding: 0;
   margin: 0;
   border: none;
-  background: rgba(133, 133, 133, 0.8);
   border-radius: 50%;
   display: inline-flex;
   align-items: center;

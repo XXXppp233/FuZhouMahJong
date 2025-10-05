@@ -103,7 +103,7 @@ const clicktestbutton = () => {
 <style scoped>
 @font-face {
   font-family: 'Segoe UI Symbol';
-  src: url('fonts/segoe-ui-symbol.ttf') format('truetype');
+  src: url('/src/assets/fonts/segoe-ui-symbol.ttf') format('truetype');
 }
 .box {
   z-index: 1;
@@ -135,6 +135,8 @@ const clicktestbutton = () => {
   width: 100%;
   height: 100%;
   border-radius: 50%;
+  object-fit: cover;
+  image-rendering: optimizeQuality;
 }
 
 .playerinfo {

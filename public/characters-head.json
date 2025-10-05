@@ -28,12 +28,11 @@
     ]
   },
   {
-    "folder": "ChineseCelebrities",
+    "folder": "Celebrities",
     "images": [
-      "/characters/head/ChineseCelebrities/Lord%20of%20Hibiscus.webp",
-      "/characters/head/ChineseCelebrities/Lord%20of%20LiTang.webp",
-      "/characters/head/ChineseCelebrities/MaoDie.webp",
-      "/characters/head/ChineseCelebrities/Otto.webp"
+      "/characters/head/Celebrities/Lord%20of%20Hibiscus.webp",
+      "/characters/head/Celebrities/Lord%20of%20LiTang.webp",
+      "/characters/head/Celebrities/Otto.webp"
     ]
   },
   {
@@ -63,6 +62,18 @@
       "/characters/head/Honkai%20Impact/Seele.webp",
       "/characters/head/Honkai%20Impact/Teriri.webp",
       "/characters/head/Honkai%20Impact/Yaezakura.webp"
+    ]
+  },
+  {
+    "folder": "MaoDie",
+    "images": [
+      "/characters/head/MaoDie/Glance.webp",
+      "/characters/head/MaoDie/H.webp",
+      "/characters/head/MaoDie/Happy.webp",
+      "/characters/head/MaoDie/Old%20Leader.webp",
+      "/characters/head/MaoDie/Pilot.webp",
+      "/characters/head/MaoDie/Smile.webp",
+      "/characters/head/MaoDie/Spider.webp"
     ]
   },
   {

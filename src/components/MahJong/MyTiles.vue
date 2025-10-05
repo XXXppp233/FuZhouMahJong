@@ -6,23 +6,16 @@ import DiscardTiles from './DiscardTiles.vue'
 import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import { statusStore } from '@/stores/status'
 import { tilesmapStore } from '@/stores/tilesmap'
+import keySounds from '/src/assets/keyboardsounds/MikuTap/main.js'
 
 const props = defineProps({})
 const status = statusStore()
 const tilesmap = tilesmapStore()
-const keySoundType = ref('MikuTap') // default value
-const keyboardsoundsurl = computed(() => `../../keyboardsounds/${keySoundType.value}/main.js`)
-let keySounds = null
-const loadKeySounds = async () => {
-  try {
-    const soundsModule = await import(/* @vite-ignore */ keyboardsoundsurl.value)
-    keySounds = soundsModule.default
-  } catch (error) {
-    console.error('Error loading key sounds:', error)
-  }
-}
+// const keySoundType = ref('MikuTap') // default value
+// const keyboardsoundsurl = ref('/src/assets/keyboardsounds/MikuTap/main.js')
 
-//const actionNames = ref(['吃 🀙🀚', '吃 🀚🀜', '吃 🀜🀝', '碰 🀛', '杠 🀄', '胡'])
+
+//const actionNames = ref(['吃 🀙🀚', '吃 🀚🀜', '吃 🀜🀝', '碰 🀛', '杠 🀛', '胡 🀛'])
 const username = computed(() => status.username)
 const myid = computed(() => status.getMemberidBySid(mysid.value))
 const mysid = computed(() => status.mysid)
@@ -107,7 +100,6 @@ const handleKeyPress = (event) => {
 }
 
 onMounted(() => {
-  loadKeySounds()
   document.addEventListener('keydown', handleKeyPress)
 })
 
@@ -189,7 +181,7 @@ const clicktestbutton = () => {
 <style scoped>
 @font-face {
   font-family: 'Segoe UI Symbol';
-  src: url('fonts/segoe-ui-symbol.ttf') format('truetype');
+  src: url('/src/assets/fonts/segoe-ui-symbol.ttf') format('truetype');
 }
 .box {
   z-index: 1;

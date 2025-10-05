@@ -8,7 +8,7 @@ export const state = reactive({
 })
 
 // 替换为你的服务器 URL
-const URL = 'http://10.20.138.116:5000'
+const URL = 'http://10.22.72.227:5000'
 
 export const socket = io(URL, {
   autoConnect: false, // 手动连接

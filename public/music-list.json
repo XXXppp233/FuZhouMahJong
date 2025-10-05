@@ -5,9 +5,9 @@
     "url": "/music/DDLC-Your-Reality-Credits.mp3"
   },
   {
-    "file": "FIR-月牙灣.mp3",
-    "name": "FIR-月牙灣",
-    "url": "/music/FIR-%E6%9C%88%E7%89%99%E7%81%A3.mp3"
+    "file": "GBC - daily.mp3",
+    "name": "GBC - daily",
+    "url": "/music/GBC%20-%20daily.mp3"
   },
   {
     "file": "GTA-Soviet Connection.mp3",
@@ -35,11 +35,6 @@
     "url": "/music/Persona%20-%20Specialist.mp3"
   },
   {
-    "file": "RDR Cruel Cruel World.m4a",
-    "name": "RDR Cruel Cruel World",
-    "url": "/music/RDR%20Cruel%20Cruel%20World.m4a"
-  },
-  {
     "file": "♿ - 莫愁乡.mp3",
     "name": "♿ - 莫愁乡",
     "url": "/music/%E2%99%BF%20-%20%E8%8E%AB%E6%84%81%E4%B9%A1.mp3"
@@ -55,6 +50,16 @@
     "url": "/music/%F0%9F%8D%AC%20-%20%E5%94%90%20%E5%BF%83%20%E6%80%AA%20%E7%9B%97%20%E5%9B%A2%F0%9F%8D%AC.mp3"
   },
   {
+    "file": "🐱 Midnight City.mp3",
+    "name": "🐱 Midnight City",
+    "url": "/music/%F0%9F%90%B1%20Midnight%20City.mp3"
+  },
+  {
+    "file": "🐱 霍 全 甲.mp3",
+    "name": "🐱 霍 全 甲",
+    "url": "/music/%F0%9F%90%B1%20%E9%9C%8D%20%E5%85%A8%20%E7%94%B2.mp3"
+  },
+  {
     "file": "🐱Way Back Home🐱.mp3",
     "name": "🐱Way Back Home🐱",
     "url": "/music/%F0%9F%90%B1Way%20Back%20Home%F0%9F%90%B1.mp3"
@@ -63,5 +68,185 @@
     "file": "🐱曼波、曼波、有时哈基米🐱.mp3",
     "name": "🐱曼波、曼波、有时哈基米🐱",
     "url": "/music/%F0%9F%90%B1%E6%9B%BC%E6%B3%A2%E3%80%81%E6%9B%BC%E6%B3%A2%E3%80%81%E6%9C%89%E6%97%B6%E5%93%88%E5%9F%BA%E7%B1%B3%F0%9F%90%B1.mp3"
+  },
+  {
+    "file": "😺 Ez4ence(StatTrack™).mp3",
+    "name": "😺 Ez4ence(StatTrack™)",
+    "url": "/music/%F0%9F%98%BA%20Ez4ence(StatTrack%E2%84%A2).mp3"
+  },
+  {
+    "file": "😺 Free haji.mp3",
+    "name": "😺 Free haji",
+    "url": "/music/%F0%9F%98%BA%20Free%20haji.mp3"
+  },
+  {
+    "file": "😺 GBC日常的小曲.mp3",
+    "name": "😺 GBC日常的小曲",
+    "url": "/music/%F0%9F%98%BA%20GBC%E6%97%A5%E5%B8%B8%E7%9A%84%E5%B0%8F%E6%9B%B2.mp3"
+  },
+  {
+    "file": "😺 Hatchime.mp3",
+    "name": "😺 Hatchime",
+    "url": "/music/%F0%9F%98%BA%20Hatchime.mp3"
+  },
+  {
+    "file": "😺 Minecraft - otherside.mp3",
+    "name": "😺 Minecraft - otherside",
+    "url": "/music/%F0%9F%98%BA%20Minecraft%20-%20otherside.mp3"
+  },
+  {
+    "file": "😺 Sunny Hachimi.mp3",
+    "name": "😺 Sunny Hachimi",
+    "url": "/music/%F0%9F%98%BA%20Sunny%20Hachimi.mp3"
+  },
+  {
+    "file": "😺 This Feeling.mp3",
+    "name": "😺 This Feeling",
+    "url": "/music/%F0%9F%98%BA%20This%20Feeling.mp3"
+  },
+  {
+    "file": "😺 Time to 曼波.mp3",
+    "name": "😺 Time to 曼波",
+    "url": "/music/%F0%9F%98%BA%20Time%20to%20%E6%9B%BC%E6%B3%A2.mp3"
+  },
+  {
+    "file": "😺 Trip.mp3",
+    "name": "😺 Trip",
+    "url": "/music/%F0%9F%98%BA%20Trip.mp3"
+  },
+  {
+    "file": "😺 Y.M.C.A.mp3",
+    "name": "😺 Y.M.C.A",
+    "url": "/music/%F0%9F%98%BA%20Y.M.C.A.mp3"
+  },
+  {
+    "file": "😺 pvz哈基博士.mp3",
+    "name": "😺 pvz哈基博士",
+    "url": "/music/%F0%9F%98%BA%20pvz%E5%93%88%E5%9F%BA%E5%8D%9A%E5%A3%AB.mp3"
+  },
+  {
+    "file": "😺 pvz屋顶纯享.mp3",
+    "name": "😺 pvz屋顶纯享",
+    "url": "/music/%F0%9F%98%BA%20pvz%E5%B1%8B%E9%A1%B6%E7%BA%AF%E4%BA%AB.mp3"
+  },
+  {
+    "file": "😺 pvz水池纯享.mp3",
+    "name": "😺 pvz水池纯享",
+    "url": "/music/%F0%9F%98%BA%20pvz%E6%B0%B4%E6%B1%A0%E7%BA%AF%E4%BA%AB.mp3"
+  },
+  {
+    "file": "😺 shape of hachimi.mp3",
+    "name": "😺 shape of hachimi",
+    "url": "/music/%F0%9F%98%BA%20shape%20of%20hachimi.mp3"
+  },
+  {
+    "file": "😺 万众基米(StatTrak™).mp3",
+    "name": "😺 万众基米(StatTrak™)",
+    "url": "/music/%F0%9F%98%BA%20%E4%B8%87%E4%BC%97%E5%9F%BA%E7%B1%B3(StatTrak%E2%84%A2).mp3"
+  },
+  {
+    "file": "😺 不再曼波.mp3",
+    "name": "😺 不再曼波",
+    "url": "/music/%F0%9F%98%BA%20%E4%B8%8D%E5%86%8D%E6%9B%BC%E6%B3%A2.mp3"
+  },
+  {
+    "file": "😺 冲基米（StatTrak™）.mp3",
+    "name": "😺 冲基米（StatTrak™）",
+    "url": "/music/%F0%9F%98%BA%20%E5%86%B2%E5%9F%BA%E7%B1%B3%EF%BC%88StatTrak%E2%84%A2%EF%BC%89.mp3"
+  },
+  {
+    "file": "😺 古典哈基米：西班牙斗耄士进行曲.mp3",
+    "name": "😺 古典哈基米：西班牙斗耄士进行曲",
+    "url": "/music/%F0%9F%98%BA%20%E5%8F%A4%E5%85%B8%E5%93%88%E5%9F%BA%E7%B1%B3%EF%BC%9A%E8%A5%BF%E7%8F%AD%E7%89%99%E6%96%97%E8%80%84%E5%A3%AB%E8%BF%9B%E8%A1%8C%E6%9B%B2.mp3"
+  },
+  {
+    "file": "😺 哈 斗 罗.mp3",
+    "name": "😺 哈 斗 罗",
+    "url": "/music/%F0%9F%98%BA%20%E5%93%88%20%E6%96%97%20%E7%BD%97.mp3"
+  },
+  {
+    "file": "😺 哈基米这个甜蜜【纯净哈基米】.mp3",
+    "name": "😺 哈基米这个甜蜜【纯净哈基米】",
+    "url": "/music/%F0%9F%98%BA%20%E5%93%88%E5%9F%BA%E7%B1%B3%E8%BF%99%E4%B8%AA%E7%94%9C%E8%9C%9C%E3%80%90%E7%BA%AF%E5%87%80%E5%93%88%E5%9F%BA%E7%B1%B3%E3%80%91.mp3"
+  },
+  {
+    "file": "😺 哈气好像比呼吸更简单了.mp3",
+    "name": "😺 哈气好像比呼吸更简单了",
+    "url": "/music/%F0%9F%98%BA%20%E5%93%88%E6%B0%94%E5%A5%BD%E5%83%8F%E6%AF%94%E5%91%BC%E5%90%B8%E6%9B%B4%E7%AE%80%E5%8D%95%E4%BA%86.mp3"
+  },
+  {
+    "file": "😺 基米与暗恋.mp3",
+    "name": "😺 基米与暗恋",
+    "url": "/music/%F0%9F%98%BA%20%E5%9F%BA%E7%B1%B3%E4%B8%8E%E6%9A%97%E6%81%8B.mp3"
+  },
+  {
+    "file": "😺 基米斜街.mp3",
+    "name": "😺 基米斜街",
+    "url": "/music/%F0%9F%98%BA%20%E5%9F%BA%E7%B1%B3%E6%96%9C%E8%A1%97.mp3"
+  },
+  {
+    "file": "😺 基米说(78物业).mp3",
+    "name": "😺 基米说(78物业)",
+    "url": "/music/%F0%9F%98%BA%20%E5%9F%BA%E7%B1%B3%E8%AF%B4(78%E7%89%A9%E4%B8%9A).mp3"
+  },
+  {
+    "file": "😺 幸运哈.mp3",
+    "name": "😺 幸运哈",
+    "url": "/music/%F0%9F%98%BA%20%E5%B9%B8%E8%BF%90%E5%93%88.mp3"
+  },
+  {
+    "file": "😺 愤怒的哈基米.mp3",
+    "name": "😺 愤怒的哈基米",
+    "url": "/music/%F0%9F%98%BA%20%E6%84%A4%E6%80%92%E7%9A%84%E5%93%88%E5%9F%BA%E7%B1%B3.mp3"
+  },
+  {
+    "file": "😺 春天在哈气.mp3",
+    "name": "😺 春天在哈气",
+    "url": "/music/%F0%9F%98%BA%20%E6%98%A5%E5%A4%A9%E5%9C%A8%E5%93%88%E6%B0%94.mp3"
+  },
+  {
+    "file": "😺 最后一哈.mp3",
+    "name": "😺 最后一哈",
+    "url": "/music/%F0%9F%98%BA%20%E6%9C%80%E5%90%8E%E4%B8%80%E5%93%88.mp3"
+  },
+  {
+    "file": "😺 月に基米哈に風.mp3",
+    "name": "😺 月に基米哈に風",
+    "url": "/music/%F0%9F%98%BA%20%E6%9C%88%E3%81%AB%E5%9F%BA%E7%B1%B3%E5%93%88%E3%81%AB%E9%A2%A8.mp3"
+  },
+  {
+    "file": "😺 杜王町radio小曲.mp3",
+    "name": "😺 杜王町radio小曲",
+    "url": "/music/%F0%9F%98%BA%20%E6%9D%9C%E7%8E%8B%E7%94%BAradio%E5%B0%8F%E6%9B%B2.mp3"
+  },
+  {
+    "file": "😺 猛毒注意.mp3",
+    "name": "😺 猛毒注意",
+    "url": "/music/%F0%9F%98%BA%20%E7%8C%9B%E6%AF%92%E6%B3%A8%E6%84%8F.mp3"
+  },
+  {
+    "file": "😺 约 德 尔 曼 波.mp3",
+    "name": "😺 约 德 尔 曼 波",
+    "url": "/music/%F0%9F%98%BA%20%E7%BA%A6%20%E5%BE%B7%20%E5%B0%94%20%E6%9B%BC%20%E6%B3%A2.mp3"
+  },
+  {
+    "file": "😺 蓝莲哈.mp3",
+    "name": "😺 蓝莲哈",
+    "url": "/music/%F0%9F%98%BA%20%E8%93%9D%E8%8E%B2%E5%93%88.mp3"
+  },
+  {
+    "file": "😺 跳楼基.mp3",
+    "name": "😺 跳楼基",
+    "url": "/music/%F0%9F%98%BA%20%E8%B7%B3%E6%A5%BC%E5%9F%BA.mp3"
+  },
+  {
+    "file": "😺 进步的小曲.mp3",
+    "name": "😺 进步的小曲",
+    "url": "/music/%F0%9F%98%BA%20%E8%BF%9B%E6%AD%A5%E7%9A%84%E5%B0%8F%E6%9B%B2.mp3"
+  },
+  {
+    "file": "😺 高山流水.mp3",
+    "name": "😺 高山流水",
+    "url": "/music/%F0%9F%98%BA%20%E9%AB%98%E5%B1%B1%E6%B5%81%E6%B0%B4.mp3"
   }
 ]

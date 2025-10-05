@@ -14,6 +14,7 @@
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue'
 import { socket } from '@/socket'
+import keySounds from '/src/assets/keyboardsounds/MikuTap/main.js'
 
 const props = defineProps({
   label: {
@@ -66,6 +67,7 @@ const handleKeyDown = (event) => {
   if (props.selected){
     if (event.keyCode === 87) { // W 键
     ispressed.value = true
+    keySounds.Play(event)
   }
   }
   else return

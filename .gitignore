@@ -37,6 +37,8 @@ playwright-report/
 *.webm
 *.mp3
 *.m4a
+*.m4s
 *.jpg
 *.png
 *.svg
+*.gz
